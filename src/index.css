@@ -10,9 +10,9 @@ body{
 
 .headline {
   font-family: 'My Custom Font';
-  font-size: 2rem;
-  font-weight: bold;
-  color: #333;
+  font-size: 18rem;
+  font-weight: normal;
+  color: #973F0B;
 }
 
 .subheadline {
