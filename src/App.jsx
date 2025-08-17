@@ -3,6 +3,9 @@ import "./App.css";
 import Header from "./components/Header.jsx";
 import { Menu, Search } from "lucide-react";
 import Card from "./components/Card.jsx";
+import PictureCard from "./components/PictureCard.jsx";
+import fujiCamera1 from "./assets/images/fujiCamera_1.png";
+import fujiCamera2 from "./assets/images/fujiCamera_2.png";
 
 function App() {
   const isDesktop = useMediaQuery({ minWidth: 1024 });
@@ -97,7 +100,7 @@ function App() {
                       repellat saepe, perferendis mollitia esse eveniet
                       consectetur corporis dolore nobis illum aspernatur
                       tempora. Corporis consectetur dolorem iste quos quia!
-                      Exercitationem officiis fugiat, cumque saepe 
+                      Exercitationem officiis fugiat, cumque saepe
                     </p>
                     <h3
                       style={{
@@ -115,7 +118,7 @@ function App() {
                       consectetur corporis dolore nobis illum aspernatur
                       tempora. Corporis consectetur dolorem iste quos quia!
                       Exercitationem officiis fugiat, cumque saepe eligendi
-                      mollitia 
+                      mollitia
                     </p>
                     <br />
                     <p className="text-start text-[0.8rem]">
@@ -126,6 +129,50 @@ function App() {
                     </p>
                   </div>
                 </div>
+              </div>
+              {/* Section 4 */}
+              <div>
+                <div className="ml-4 -mt-[50px] overflow-visible">
+                  <div className="rotate-[-10deg]">
+                    <PictureCard img="https://images.pexels.com/photos/16978572/pexels-photo-16978572.jpeg" />
+                  </div>
+                </div>
+
+                <div className="flex items-end justify-end">
+                  <PictureCard img="https://images.pexels.com/photos/163034/old-retro-antique-vintage-163034.jpeg" />
+                </div>
+                <div className="ml-[150px] mt-[150px]">
+                  <div className="rotate-[15deg]">
+                    <PictureCard img="https://images.pexels.com/photos/11343517/pexels-photo-11343517.jpeg" />
+                  </div>
+                </div>
+              </div>
+              {/* Section 5 */}
+              <div>
+                <div className="flex flex-col items-center justify-center">
+                  <h4 className="ml-16">Other Models</h4>
+                  <h1 className="subheadline -mt-[60px]">COLLECTION</h1>
+                </div>
+                <div className="flex flex-row">
+                  <div>
+                    <img src={fujiCamera2} alt="" />
+                    <h4 className="ml-16">Other Models</h4>
+                  </div>
+                  <div className="flex flex-col">
+                    <img src={fujiCamera1} alt="" />
+                    <h4 className="ml-16">Other Models</h4>
+                  </div>
+                </div>
+              </div>
+              {/* Section 6 */}
+              <div className="flex flex-row">
+                <img src="https://images.pexels.com/photos/3182452/pexels-photo-3182452.jpeg
+                " alt="" />
+              <div className="flex flex-col">
+                <h4 className="ml-16">Other Models</h4>
+                <h1 className="subheadline -mt-[60px]">RETHINK</h1>
+                <h1 className="subheadline -mt-[60px]">CANVAS</h1>
+              </div>
               </div>
             </div>
           </div>
