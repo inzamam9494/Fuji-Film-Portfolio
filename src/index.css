@@ -8,6 +8,17 @@ body{
   src: url('./assets/fonts/Mosherif.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Kids Font';
+  src: url('./assets/fonts/Creative Kids.otf') format('opentype');
+}
+
+.kidfont {
+  font-family: 'Kids Font';
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 .headline {
   font-family: 'My Custom Font';
   font-size: 18rem;

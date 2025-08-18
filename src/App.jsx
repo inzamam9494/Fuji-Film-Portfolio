@@ -15,7 +15,7 @@ function App() {
     <>
       {isDesktop && (
         <div>
-          <div>
+          <div className="overflow-hidden">
             <div className="flex flex-row items-start justify-start">
               <div className="flex flex-col items-start p-4 fixed top-0 left-0">
                 <button>
@@ -46,7 +46,7 @@ function App() {
               {/* Section 2 */}
               <div className=" flex flex-row items-center justify-between">
                 <div className="flex flex-col items-start w-1/3">
-                  <h4>Limited Version</h4>
+                  <h4 className="kidfont">Limited Version</h4>
                   <h1 className="subheadline -mt-[60px]">INTAX</h1>
                   <h1 className="subheadline -mt-[140px]">FUJIFILM</h1>
                   <p className="text-start text-[0.8rem] -mt-[60px]">
@@ -87,7 +87,7 @@ function App() {
                       src="https://images.pexels.com/photos/2422255/pexels-photo-2422255.jpeg"
                       alt=""
                     />
-                    <h4 className="ml-16">
+                    <h4 className="kidfont ml-16">
                       Watch the actual footage recoded <br />{" "}
                       <span className="text-[#973F0B]">an Intax</span>
                     </h4>
@@ -131,48 +131,72 @@ function App() {
                 </div>
               </div>
               {/* Section 4 */}
-              <div>
-                <div className="ml-4 -mt-[50px] overflow-visible">
-                  <div className="rotate-[-10deg]">
-                    <PictureCard img="https://images.pexels.com/photos/16978572/pexels-photo-16978572.jpeg" />
-                  </div>
+              <div className="flex flex-col">
+                <div className="flex ml-6 rotate-[-10deg] w-1/4">
+                  <PictureCard img="https://images.pexels.com/photos/31150980/pexels-photo-31150980.jpeg" />
                 </div>
-
-                <div className="flex items-end justify-end">
+                <div className="self-end mr-12 rotate-[-10deg] w-1/3">
                   <PictureCard img="https://images.pexels.com/photos/163034/old-retro-antique-vintage-163034.jpeg" />
                 </div>
-                <div className="ml-[150px] mt-[150px]">
-                  <div className="rotate-[15deg]">
-                    <PictureCard img="https://images.pexels.com/photos/11343517/pexels-photo-11343517.jpeg" />
-                  </div>
+                <div className="self-start ml-32 rotate-[15deg] w-1/4">
+                  <PictureCard img="https://images.pexels.com/photos/11343517/pexels-photo-11343517.jpeg" />
                 </div>
               </div>
               {/* Section 5 */}
-              <div>
+              <div className="mt-32">
                 <div className="flex flex-col items-center justify-center">
-                  <h4 className="ml-16">Other Models</h4>
+                  <h4 className="kidfont">Other Models</h4>
                   <h1 className="subheadline -mt-[60px]">COLLECTION</h1>
                 </div>
-                <div className="flex flex-row">
-                  <div>
-                    <img src={fujiCamera2} alt="" />
-                    <h4 className="ml-16">Other Models</h4>
+                <div className="flex flex-row items-center justify-between mt-10">
+                  <div className="flex flex-col items-center justify-center w-1/3">
+                    <img className="scale-200" src={fujiCamera2} alt="" />
+                    <h4 className="text-center -mt-[10px] text-[0.8rem]">
+                      INTAX mini Evo <br /> <span className="text-[0.7rem] font-semibold">$5000.00</span>
+                    </h4>
                   </div>
-                  <div className="flex flex-col">
-                    <img src={fujiCamera1} alt="" />
-                    <h4 className="ml-16">Other Models</h4>
+                  <div className="flex flex-col justify-end h-52">
+                    <h4 className="text-center -mt-[10px] text-[0.8rem]">INTAX mini Evo <br /><span className="text-[0.7rem] font-semibold">$966.00</span></h4>
+                  </div>
+                  <div className="flex flex-col items-center justify-center w-1/3 -mt-10">
+                    <img className="scale-120" src={fujiCamera1} alt="" />
+                    <h4 className="mt-5 text-center text-[0.8rem]">
+                      INTAX mini Evo <br />
+                      <span className="text-[0.7rem] font-semibold">$5000.00</span>
+                    </h4>
                   </div>
                 </div>
               </div>
               {/* Section 6 */}
-              <div className="flex flex-row">
-                <img src="https://images.pexels.com/photos/3182452/pexels-photo-3182452.jpeg
-                " alt="" />
-              <div className="flex flex-col">
-                <h4 className="ml-16">Other Models</h4>
-                <h1 className="subheadline -mt-[60px]">RETHINK</h1>
-                <h1 className="subheadline -mt-[60px]">CANVAS</h1>
-              </div>
+              <div className="flex flex-row items-start mt-32 mb-32 justify-between px-12">
+                <img
+                  className="h-[500px] w-[500px] border-10 border-white object-cover"
+                  src="https://images.pexels.com/photos/11343517/pexels-photo-11343517.jpeg
+                "
+                  alt=""
+                />
+                <div className="flex flex-col px-16">
+                  <h4 className="kidfont">Other Models</h4>
+                  <h1 className="subheadline -mt-[60px]">RETHINK</h1>
+                  <h1 className="subheadline -mt-[140px]">CANVAS</h1>
+                  <p className="text-start text-[0.7rem] -mt-[60px]">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Minus voluptas quidem praesentium quis blanditiis ipsum
+                    ullam explicabo veritatis dolor, natus unde consequatur
+                    repellat saepe, perferendis mollitia esse eveniet
+                    consectetur corporis dolore nobis illum aspernatur tempora.
+                    Corporis consectetur dolorem iste quos quia! Exercitationem
+                    officiis fugiat, cumque saepe eligendi mollitia facere,
+                    quisquam pariatur iusto eius, placeat harum explicabo ad.
+                    Veritatis, quibusdam earum
+                  </p>
+                  <p className="text-start text-[0.7rem] mt-6">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Ratione voluptas blanditiis hic ut unde beatae vitae
+                    accusantium architecto labore reprehenderit debitis, sed
+                    aliquid est? Dolores quam tenetur voluptatem est mollitia?
+                  </p>
+                </div>
               </div>
             </div>
           </div>
