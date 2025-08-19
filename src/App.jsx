@@ -6,16 +6,49 @@ import Card from "./components/Card.jsx";
 import PictureCard from "./components/PictureCard.jsx";
 import fujiCamera1 from "./assets/images/fujiCamera_1.png";
 import fujiCamera2 from "./assets/images/fujiCamera_2.png";
+import vintage from "./assets/images/vintage.png";
+import { motion, useScroll, useTransform } from "framer-motion";
+
+function FloatingImage({ src }) {
+  const { scrollY } = useScroll();
+
+  // Rotate smoothly while scrolling
+  const rotate = useTransform(scrollY, [0, 500], [0, 65], [0,45]);
+
+  // Move slightly down
+  const y = useTransform(scrollY, [0, 500], [0, 50], [0,0]);
+
+  // Change width/height (scale effect)
+  const scale = useTransform(scrollY, [0, 300, 600], [1, 1.2, 1]);
+
+
+  return (
+    <div>
+    <motion.img
+      src={src}
+      alt="floating camera"
+      className="fixed rotate-[35deg] w-[550px] top-35 left-1/3"
+      style={{ rotate, scale, y }}
+      transition={{ duration: 2, ease: "easeInOut" }}
+    />
+    </div>
+  );
+}
 
 function App() {
   const isDesktop = useMediaQuery({ minWidth: 1024 });
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
+
   return (
     <>
       {isDesktop && (
         <div>
-          <div className="overflow-hidden">
+          <div>
+            <FloatingImage src = {vintage} />
+          </div>
+
+          <div className="overflow-hidden ">
             <div className="flex flex-row items-start justify-start">
               <div className="flex flex-col items-start p-4 fixed top-0 left-0">
                 <button>
@@ -150,19 +183,29 @@ function App() {
                 </div>
                 <div className="flex flex-row items-center justify-between mt-10">
                   <div className="flex flex-col items-center justify-center w-1/3">
-                    <img className="scale-200" src={fujiCamera2} alt="" />
+                    <img className="scale-200 " src={fujiCamera2} alt="" />
                     <h4 className="text-center -mt-[10px] text-[0.8rem]">
-                      INTAX mini Evo <br /> <span className="text-[0.7rem] font-semibold">$5000.00</span>
+                      INTAX mini Evo <br />{" "}
+                      <span className="text-[0.7rem] font-semibold">
+                        $5000.00
+                      </span>
                     </h4>
                   </div>
                   <div className="flex flex-col justify-end h-52">
-                    <h4 className="text-center -mt-[10px] text-[0.8rem]">INTAX mini Evo <br /><span className="text-[0.7rem] font-semibold">$966.00</span></h4>
+                    <h4 className="text-center -mt-[10px] text-[0.8rem]">
+                      INTAX mini Evo <br />
+                      <span className="text-[0.7rem] font-semibold">
+                        $966.00
+                      </span>
+                    </h4>
                   </div>
                   <div className="flex flex-col items-center justify-center w-1/3 -mt-10">
                     <img className="scale-120" src={fujiCamera1} alt="" />
                     <h4 className="mt-5 text-center text-[0.8rem]">
                       INTAX mini Evo <br />
-                      <span className="text-[0.7rem] font-semibold">$5000.00</span>
+                      <span className="text-[0.7rem] font-semibold">
+                        $5000.00
+                      </span>
                     </h4>
                   </div>
                 </div>
