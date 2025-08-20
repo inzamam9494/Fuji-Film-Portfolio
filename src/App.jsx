@@ -13,13 +13,15 @@ function FloatingImage({ src }) {
   const { scrollY } = useScroll();
 
   // Rotate smoothly while scrolling
-  const rotate = useTransform(scrollY, [0, 500], [0, 65], [0,45]);
+  const rotate = useTransform(scrollY, [0, 500, 1000, 1500, 2000], [1, 65, 40, -35, -35]);
 
   // Move slightly down
-  const y = useTransform(scrollY, [0, 500], [0, 50], [0,0]);
+  const y = useTransform(scrollY, [0, 500], [0, 50]);
+
+  const opacity = useTransform(scrollY, [0, 500, 1000, 1500, 3000, 7000, 8500], [1, 1, 1, 1, 1, 1, 0]);
 
   // Change width/height (scale effect)
-  const scale = useTransform(scrollY, [0, 300, 600], [1, 1.2, 1]);
+  const scale = useTransform(scrollY, [0, 300, 600, 900, 1200, 1800, 2500, 3000], [1, 1.2, 1, 1, 1.2, 1.4, 0.9, 0]);
 
 
   return (
@@ -27,8 +29,8 @@ function FloatingImage({ src }) {
     <motion.img
       src={src}
       alt="floating camera"
-      className="fixed rotate-[35deg] w-[550px] top-35 left-1/3"
-      style={{ rotate, scale, y }}
+      className=" fixed rotate-[35deg] w-[550px] top-35 left-1/3 z-0"
+      style={{ rotate, scale, y, opacity }}
       transition={{ duration: 2, ease: "easeInOut" }}
     />
     </div>
@@ -165,13 +167,13 @@ function App() {
               </div>
               {/* Section 4 */}
               <div className="flex flex-col">
-                <div className="flex ml-6 rotate-[-10deg] w-1/4">
+                <div className="flex ml-2 rotate-[-10deg] w-1/4">
                   <PictureCard img="https://images.pexels.com/photos/31150980/pexels-photo-31150980.jpeg" />
                 </div>
-                <div className="self-end mr-12 rotate-[-10deg] w-1/3">
+                <div className="self-end mr-12 w-1/3">
                   <PictureCard img="https://images.pexels.com/photos/163034/old-retro-antique-vintage-163034.jpeg" />
                 </div>
-                <div className="self-start ml-32 rotate-[15deg] w-1/4">
+                <div className="self-start mt-12 ml-32 rotate-[15deg] w-1/4">
                   <PictureCard img="https://images.pexels.com/photos/11343517/pexels-photo-11343517.jpeg" />
                 </div>
               </div>
