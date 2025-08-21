@@ -1,7 +1,16 @@
 import { useMediaQuery } from "react-responsive";
 import "./App.css";
 import Header from "./components/Header.jsx";
-import { Menu, Search } from "lucide-react";
+import {
+  BugPlay,
+  Menu,
+  PlaneIcon,
+  Play,
+  PlayCircle,
+  PlayIcon,
+  PlaySquare,
+  Search,
+} from "lucide-react";
 import Card from "./components/Card.jsx";
 import PictureCard from "./components/PictureCard.jsx";
 import fujiCamera1 from "./assets/images/fujiCamera_1.png";
@@ -13,26 +22,37 @@ function FloatingImage({ src }) {
   const { scrollY } = useScroll();
 
   // Rotate smoothly while scrolling
-  const rotate = useTransform(scrollY, [0, 500, 1000, 1500, 2000], [1, 65, 40, -35, -35]);
+  const rotate = useTransform(
+    scrollY,
+    [0, 500, 1000, 1500, 2000],
+    [1, 65, 40, -35, -35]
+  );
 
   // Move slightly down
   const y = useTransform(scrollY, [0, 500], [0, 50]);
 
-  const opacity = useTransform(scrollY, [0, 500, 1000, 1500, 3000, 7000, 8500], [1, 1, 1, 1, 1, 1, 0]);
+  const opacity = useTransform(
+    scrollY,
+    [0, 500, 1000, 1500, 3000, 7000, 8500],
+    [1, 1, 1, 1, 1, 1, 0]
+  );
 
   // Change width/height (scale effect)
-  const scale = useTransform(scrollY, [0, 300, 600, 900, 1200, 1800, 2500, 3000], [1, 1.2, 1, 1, 1.2, 1.4, 0.9, 0]);
-
+  const scale = useTransform(
+    scrollY,
+    [0, 300, 600, 900, 1200, 1800, 2500, 3000],
+    [1, 1.2, 1, 1, 1.2, 1.4, 0.9, 0]
+  );
 
   return (
     <div>
-    <motion.img
-      src={src}
-      alt="floating camera"
-      className=" fixed rotate-[35deg] w-[550px] top-35 left-1/3 z-0"
-      style={{ rotate, scale, y, opacity }}
-      transition={{ duration: 2, ease: "easeInOut" }}
-    />
+      <motion.img
+        src={src}
+        alt="floating camera"
+        className=" fixed rotate-[35deg] w-[550px] top-35 left-1/3 z-0 drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)]"
+        style={{ rotate, scale, y, opacity }}
+        transition={{ duration: 2, ease: "easeInOut" }}
+      />
     </div>
   );
 }
@@ -41,13 +61,12 @@ function App() {
   const isDesktop = useMediaQuery({ minWidth: 1024 });
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
-
   return (
     <>
       {isDesktop && (
         <div>
           <div>
-            <FloatingImage src = {vintage} />
+            <FloatingImage src={vintage} />
           </div>
 
           <div className="overflow-hidden ">
@@ -72,7 +91,9 @@ function App() {
                 <Header />
               </div>
               {/* Section 1 */}
-              <div className="h-screen ">
+              <div
+                className="h-screen "
+              >
                 <h1 className="headline text-center">UNLIMITED</h1>
                 <h1 className="headline text-center -mt-[250px]">
                   RELEASE IPA
@@ -117,6 +138,11 @@ function App() {
                 </h1>
                 <div className="flex flex-row items-center justify-between">
                   <div className="flex flex-col items-start -mt-[350px] w-1/3">
+                    <div>
+                      <button className=" text-white absolute mt-20 left-[260px] ">
+                        <Play size={30} className="fill-white" />
+                      </button>
+                    </div>
                     <img
                       className="ml-16  h-[180px]"
                       src="https://images.pexels.com/photos/2422255/pexels-photo-2422255.jpeg"
@@ -183,8 +209,8 @@ function App() {
                   <h4 className="kidfont">Other Models</h4>
                   <h1 className="subheadline -mt-[60px]">COLLECTION</h1>
                 </div>
-                <div className="flex flex-row items-center justify-between mt-10">
-                  <div className="flex flex-col items-center justify-center w-1/3">
+                <div className="flex flex-row items-center justify-between mt-10 drop-shadow-[0_35px_35px_rgba(0,0,0,0.3)]">
+                  <div className="flex flex-col items-center justify-center w-1/3 ">
                     <img className="scale-200 " src={fujiCamera2} alt="" />
                     <h4 className="text-center -mt-[10px] text-[0.8rem]">
                       INTAX mini Evo <br />{" "}
